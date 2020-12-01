@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Base01
   - Pincher
+  - Finger
   layers:
   - Default
   - TransparentFX

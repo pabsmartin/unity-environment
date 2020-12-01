@@ -1,0 +1,60 @@
+behaviors:
+  TouchCube:
+    trainer_type: sac
+    hyperparameters:
+      batch_size: 128
+      buffer_size: 50000
+      learning_rate: 0.0003
+      learning_rate_schedule: constant
+      buffer_init_steps: 0
+      tau: 0.005
+      steps_per_update: 1.0
+      save_replay_buffer: false
+      init_entcoef: 1.0
+      reward_signal_steps_per_update: 1.0
+      
+    network_settings:
+      vis_encode_type: simple
+      normalize: false
+      hidden_units: 128
+      num_layers: 2
+      memory:
+        sequence_length: 64
+        memory_size: 256
+     
+    max_steps: 500000
+    time_horizon: 64
+    summary_freq: 5000
+    keep_checkpoints: 5
+    checkpoint_interval: 500000
+    threaded: true
+    init_path: null
+    
+    reward_signals:
+      extrinsic:
+        gamma: 0.95
+        strength: 1.0
+    
+    framework: tensorflow
+
+environment_parameters:
+  mass:
+    sampler_type: uniform
+    sampler_parameters:
+        min_value: 0.5
+        max_value: 10
+
+  length:
+    sampler_type: multirangeuniform
+    sampler_parameters:
+        intervals: [[7, 10], [15, 20]]
+
+  scale:
+    sampler_type: gaussian
+    sampler_parameters:
+        mean: 2
+        st_dev: .3  
+        
+
+
+    

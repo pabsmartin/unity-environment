@@ -803,6 +803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fingerA: {fileID: 1838417712}
   fingerB: {fileID: 1449517471}
+  pinchTarget: {fileID: 1383161865}
   grip: 0
   gripSpeed: 3
   gripState: 0
@@ -1272,6 +1273,7 @@ GameObject:
   - component: {fileID: 1383161867}
   - component: {fileID: 1383161872}
   - component: {fileID: 1383161873}
+  - component: {fileID: 1383161866}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1279,6 +1281,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1383161866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383161865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4faa4f4e5a4b9c241831269b8a2e9694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinchTargetTag: Pincher
+  hasPinchedTarget: 0
+  hand: {fileID: 995377197}
 --- !u!54 &1383161867
 Rigidbody:
   m_ObjectHideFlags: 0

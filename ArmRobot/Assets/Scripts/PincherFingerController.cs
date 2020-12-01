@@ -39,6 +39,7 @@ public class PincherFingerController : MonoBehaviour
     public float CurrentGrip()
     {
         float grip = Mathf.InverseLerp(openPosition.z, closedZ, transform.localPosition.z);
+        //Debug.Log("CURRENT GRIP = " + grip);
         return grip;
     }
 
