@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1606384679",
+        "python_version": "3.7.9 (tags/v3.7.9:13c94747c7, Aug 17 2020, 18:58:18) [MSC v.1900 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\pabma\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\mlagents-learn old_ur3_config.yml",
+        "mlagents_version": "0.20.0",
+        "mlagents_envs_version": "0.22.0",
+        "communication_protocol_version": "1.2.0",
+        "tensorflow_version": "2.3.1",
+        "numpy_version": "1.18.5",
+        "end_time_seconds": "1606384710"
+    },
+    "total": 30.168462899999994,
+    "count": 1,
+    "self": 0.2652581999999768,
+    "children": {
+        "run_training.setup": {
+            "total": 0.10701570000000515,
+            "count": 1,
+            "self": 0.10701570000000515
+        },
+        "TrainerController.start_learning": {
+            "total": 29.796189000000012,
+            "count": 1,
+            "self": 0.00040840000001196586,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 29.7905356,
+                    "count": 1,
+                    "self": 29.7905356
+                },
+                "TrainerController._save_models": {
+                    "total": 0.005245000000002165,
+                    "count": 1,
+                    "self": 0.005245000000002165
+                }
+            }
+        }
+    }
+}

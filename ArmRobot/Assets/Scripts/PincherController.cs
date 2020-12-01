@@ -8,6 +8,7 @@ public class PincherController : MonoBehaviour
 {
     public GameObject fingerA;
     public GameObject fingerB;
+    public GameObject pinchTarget;
 
     PincherFingerController fingerAController;
     PincherFingerController fingerBController;
@@ -29,6 +30,8 @@ public class PincherController : MonoBehaviour
     {
         UpdateGrip();
         UpdateFingersForGrip();
+        Debug.Log("PincherController grip = " + CurrentGrip());
+
     }
 
 
@@ -52,6 +55,17 @@ public class PincherController : MonoBehaviour
         return globalCenterPoint;
     }
 
+    public bool IsOnCube()
+    {
+        /* Checks if the cube's position is between the fingers of the pincher */
+        bool locatedOk = false;
+        if (V3Equal(CurrentGraspCenter(), pinchTarget.transform.position))
+            locatedOk = true;
+
+        Debug.Log("Pincher is on Cube: " + locatedOk);
+        return locatedOk;
+    }
+
 
     // CONTROL
 
@@ -63,8 +77,8 @@ public class PincherController : MonoBehaviour
         gripState = GripState.Fixed;
     }
 
-    // GRIP HELPERS
 
+    // GRIP HELPERS
     void UpdateGrip()
     {
         if (gripState != GripState.Fixed)
@@ -81,8 +95,21 @@ public class PincherController : MonoBehaviour
         fingerBController.UpdateGrip(grip);
     }
 
+    public void CloseGrip()
+    {
+        /* Changes gripState so that the fingers close */
+        gripState = GripState.Closing;
+    }
 
-
-
-
+    /*UNUSED*/
+    public void OpenGrip()
+    {
+        /* Changes gripState so that the fingers open */
+        gripState = GripState.Opening;
+    }
+    bool V3Equal(Vector3 pos1, Vector3 pos2)
+    {
+        /* Compares if both positions are the same */
+        return Vector3.SqrMagnitude(pos1 - pos2) < 0.0001;
+    }
 }

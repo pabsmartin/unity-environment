@@ -15,12 +15,18 @@ public class RobotAgent : Agent
     TouchDetector touchDetector;
     TablePositionRandomizer tablePositionRandomizer;
 
+    PincherController pincherController;
+    PinchDetector pinchDetector;
+
 
     void Start()
     {
         robotController = robot.GetComponent<RobotController>();
         touchDetector = cube.GetComponent<TouchDetector>();
         tablePositionRandomizer = cube.GetComponent<TablePositionRandomizer>();
+        
+        pinchDetector = cube.GetComponent<PinchDetector>();
+        pincherController = endEffector.GetComponent<PincherController>();
     }
 
 
@@ -32,6 +38,8 @@ public class RobotAgent : Agent
         robotController.ForceJointsToRotations(defaultRotations);
         touchDetector.hasTouchedTarget = false;
         tablePositionRandomizer.Move();
+
+        pinchDetector.hasPinchedTarget = false;
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -62,7 +70,7 @@ public class RobotAgent : Agent
         }
 
         // Knocked the cube off the table
-        if (cube.transform.position.y < -1.0)
+        if (cube.transform.position.y < 0.0)
         {
             SetReward(-1f);
             EndEpisode();
@@ -71,7 +79,20 @@ public class RobotAgent : Agent
         // end episode if we touched the cube
         if (touchDetector.hasTouchedTarget)
         {
-            SetReward(1f);
+            SetReward(1.0f);
+            EndEpisode();
+        }
+
+        if (pincherController.IsOnCube())
+        {
+            SetReward(2.0f);
+            EndEpisode();
+
+        }
+
+        if (pinchDetector.hasPinchedTarget)
+        {
+            SetReward(5.0f);
             EndEpisode();
         }
 
@@ -103,5 +124,3 @@ public class RobotAgent : Agent
 
 
 }
-
-
