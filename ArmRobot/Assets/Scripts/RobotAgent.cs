@@ -69,8 +69,11 @@ public class RobotAgent : Agent
             robotController.RotateJoint(jointIndex, rotationDirection, false);
         }
 
+        //Energy penalization
+        AddReward(-0.001f);
+
         // Knocked the cube off the table
-        if (cube.transform.position.y < 0.0)
+        if (cube.transform.position.y < -1.0)
         {
             SetReward(-1f);
             EndEpisode();
@@ -79,20 +82,17 @@ public class RobotAgent : Agent
         // end episode if we touched the cube
         if (touchDetector.hasTouchedTarget)
         {
-            SetReward(1.0f);
-            EndEpisode();
+            AddReward(0.05f);
         }
 
         if (pincherController.IsOnCube())
         {
-            SetReward(2.0f);
-            EndEpisode();
-
+            AddReward(0.1f);
         }
 
         if (pinchDetector.hasPinchedTarget)
         {
-            SetReward(5.0f);
+            SetReward(1.0f);
             EndEpisode();
         }
 
@@ -108,6 +108,7 @@ public class RobotAgent : Agent
         }
         var reward = - distanceToCube + jointHeight / 100f;
 
+        //AddReward(reward * 0.01f);
         SetReward(reward * 0.1f);
 
     }
