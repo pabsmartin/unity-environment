@@ -73,7 +73,7 @@ public class RobotAgent : Agent
          * Energy used penalization
          * Used every 2 trainings to compare performance
          */
-        //AddReward(-0.001f);
+        AddReward(-0.001f);
 
         // Knocked the cube off the table
         if (cube.transform.position.y < -1.0)
