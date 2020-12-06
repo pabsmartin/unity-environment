@@ -69,8 +69,11 @@ public class RobotAgent : Agent
             robotController.RotateJoint(jointIndex, rotationDirection, false);
         }
 
-        //Energy penalization
-        AddReward(-0.001f);
+        /*
+         * Energy used penalization
+         * Used every 2 trainings to compare performance
+         */
+        //AddReward(-0.001f);
 
         // Knocked the cube off the table
         if (cube.transform.position.y < -1.0)
@@ -98,8 +101,8 @@ public class RobotAgent : Agent
 
 
         //reward
-        float distanceToCube = Vector3.Distance(endEffector.transform.position, cube.transform.position); // roughly 0.7f
-
+        //float distanceToCube = Vector3.Distance(endEffector.transform.position, cube.transform.position); // roughly 0.7f
+        float distanceToCube = Vector3.Distance(pincherController.CurrentGraspCenter(), cube.transform.position);
 
         var jointHeight = 0f; // This is to reward the agent for keeping high up // max is roughly 3.0f
         for (int jointIndex = 0; jointIndex < robotController.joints.Length; jointIndex ++)

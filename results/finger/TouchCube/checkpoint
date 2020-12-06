@@ -1,0 +1,2 @@
+model_checkpoint_path: "TouchCube-201102.ckpt"
+all_model_checkpoint_paths: "TouchCube-201102.ckpt"

@@ -10,6 +10,9 @@ public class PincherController : MonoBehaviour
     public GameObject fingerB;
     public GameObject pinchTarget;
 
+    //Used to visualize CurrentGraspCenter()
+    //public GameObject sphere;
+
     PincherFingerController fingerAController;
     PincherFingerController fingerBController;
 
@@ -30,7 +33,7 @@ public class PincherController : MonoBehaviour
     {
         UpdateGrip();
         UpdateFingersForGrip();
-        Debug.Log("PincherController grip = " + CurrentGrip());
+        //Debug.Log("PincherController grip = " + CurrentGrip());
 
     }
 
@@ -52,6 +55,8 @@ public class PincherController : MonoBehaviour
          */
         Vector3 localCenterPoint = (fingerAController.GetOpenPosition() + fingerBController.GetOpenPosition()) / 2.0f;
         Vector3 globalCenterPoint = transform.TransformPoint(localCenterPoint);
+        //sphere.transform.position = Vector3.MoveTowards(sphere.transform.position, globalCenterPoint, 1.0f * Time.deltaTime);
+
         return globalCenterPoint;
     }
 
@@ -111,5 +116,7 @@ public class PincherController : MonoBehaviour
     {
         /* Compares if both positions are the same */
         return Vector3.SqrMagnitude(pos1 - pos2) < 0.0001;
+        //return Vector3.SqrMagnitude(pos1 - pos2) < 0.001;
+        //return Vector3.SqrMagnitude(pos1 - pos2) < 0.01;
     }
 }
