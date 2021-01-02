@@ -1,0 +1,3 @@
+model_checkpoint_path: "TouchCube-500841.ckpt"
+all_model_checkpoint_paths: "TouchCube-499963.ckpt"
+all_model_checkpoint_paths: "TouchCube-500841.ckpt"
