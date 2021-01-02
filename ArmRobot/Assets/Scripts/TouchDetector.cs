@@ -7,7 +7,6 @@ public class TouchDetector : MonoBehaviour
     public string touchTargetTag;
     public bool hasTouchedTarget = false;
 
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.gameObject.tag == touchTargetTag)

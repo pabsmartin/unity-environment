@@ -11,7 +11,7 @@ public class PincherController : MonoBehaviour
     public GameObject pinchTarget;
 
     //Used to visualize CurrentGraspCenter()
-    //public GameObject sphere;
+    public GameObject sphere;
 
     PincherFingerController fingerAController;
     PincherFingerController fingerBController;
@@ -55,7 +55,7 @@ public class PincherController : MonoBehaviour
          */
         Vector3 localCenterPoint = (fingerAController.GetOpenPosition() + fingerBController.GetOpenPosition()) / 2.0f;
         Vector3 globalCenterPoint = transform.TransformPoint(localCenterPoint);
-        //sphere.transform.position = Vector3.MoveTowards(sphere.transform.position, globalCenterPoint, 1.0f * Time.deltaTime);
+        sphere.transform.position = Vector3.MoveTowards(sphere.transform.position, globalCenterPoint, 1.0f * Time.deltaTime);
 
         return globalCenterPoint;
     }
@@ -64,10 +64,14 @@ public class PincherController : MonoBehaviour
     {
         /* Checks if the cube's position is between the fingers of the pincher */
         bool locatedOk = false;
-        if (V3Equal(CurrentGraspCenter(), pinchTarget.transform.position))
-            locatedOk = true;
 
-        Debug.Log("Pincher is on Cube: " + locatedOk);
+        Vector3 pos1 = CurrentGraspCenter();
+        Vector3 pos2 = pinchTarget.transform.position;
+
+        if (V3Equal(pos1, pos2))
+        {
+            locatedOk = true;
+        }
         return locatedOk;
     }
 
@@ -106,17 +110,39 @@ public class PincherController : MonoBehaviour
         gripState = GripState.Closing;
     }
 
+    public void FixGrip()
+    {
+        /* Changes gripState so that the fingers close */
+        gripState = GripState.Fixed;
+    }
     /*UNUSED*/
     public void OpenGrip()
     {
         /* Changes gripState so that the fingers open */
         gripState = GripState.Opening;
     }
+
     bool V3Equal(Vector3 pos1, Vector3 pos2)
     {
+        //Debug.Log("Pos1: " + pos1);
+        //Debug.Log("Pos2: " + pos2);
+
         /* Compares if both positions are the same */
-        return Vector3.SqrMagnitude(pos1 - pos2) < 0.0001;
-        //return Vector3.SqrMagnitude(pos1 - pos2) < 0.001;
-        //return Vector3.SqrMagnitude(pos1 - pos2) < 0.01;
+        return Vector3.SqrMagnitude(pos1 - pos2) < 0.01;
+
+        //return Vector3.Distance(pos1, pos2) < 0.01;
+    }
+
+    public bool LocatedIn2D(Vector3 pos1, Vector3 pos2, float allowedDiff)
+    {
+        var dx = Mathf.Abs(pos1.x - pos2.x);
+        if (dx > allowedDiff)
+            return false;
+        var dz = Mathf.Abs(pos1.z - pos2.z);
+        if (dz > allowedDiff)
+            return false;
+        //var dy = Mathf.Abs(pos1.y - pos2.y);
+        //return dy < allowedDiff;
+        return true;
     }
 }
