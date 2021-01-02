@@ -95,7 +95,7 @@ public class RobotAgent : Agent
          * Energy used penalization
          * Used every 2 trainings to compare performance
          */
-        //AddReward(-0.001f);
+        AddReward(-0.001f);
 
         /* DISTANCE BASED REWARD */
         //float distanceToCube = Vector3.Distance(endEffector.transform.position, cube.transform.position); // roughly 0.7f
