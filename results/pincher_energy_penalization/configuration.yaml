@@ -55,7 +55,7 @@ environment_parameters:
     - value:
         sampler_type: uniform
         sampler_parameters:
-          seed: 9309
+          seed: 6251
           min_value: 0.5
           max_value: 10.0
       name: mass
@@ -65,7 +65,7 @@ environment_parameters:
     - value:
         sampler_type: multirangeuniform
         sampler_parameters:
-          seed: 9310
+          seed: 6252
           intervals:
           - - 7.0
             - 10.0
@@ -78,7 +78,7 @@ environment_parameters:
     - value:
         sampler_type: gaussian
         sampler_parameters:
-          seed: 9311
+          seed: 6253
           mean: 2.0
           st_dev: 0.3
       name: scale
