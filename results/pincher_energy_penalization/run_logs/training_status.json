@@ -11,18 +11,6 @@
     "TouchCube": {
         "checkpoints": [
             {
-                "steps": 45192,
-                "file_path": "results\\energy_penalization\\TouchCube\\TouchCube-45192.nn",
-                "reward": null,
-                "creation_time": 1606934972.9473786
-            },
-            {
-                "steps": 124634,
-                "file_path": "results\\energy_penalization\\TouchCube\\TouchCube-124634.nn",
-                "reward": null,
-                "creation_time": 1606998564.0011194
-            },
-            {
                 "steps": 136762,
                 "file_path": "results\\energy_penalization\\TouchCube\\TouchCube-136762.nn",
                 "reward": null,
@@ -33,13 +21,31 @@
                 "file_path": "results\\energy_penalization\\TouchCube\\TouchCube-188117.nn",
                 "reward": null,
                 "creation_time": 1607020036.207879
+            },
+            {
+                "steps": 276607,
+                "file_path": "results\\energy_penalization\\TouchCube\\TouchCube-276607.nn",
+                "reward": null,
+                "creation_time": 1609714867.7143164
+            },
+            {
+                "steps": 499948,
+                "file_path": "results\\energy_penalization\\TouchCube\\TouchCube-499948.nn",
+                "reward": null,
+                "creation_time": 1609782493.1876547
+            },
+            {
+                "steps": 501134,
+                "file_path": "results\\energy_penalization\\TouchCube\\TouchCube-501134.nn",
+                "reward": -1.8662490785121917,
+                "creation_time": 1609782495.589227
             }
         ],
         "final_checkpoint": {
-            "steps": 188117,
+            "steps": 501134,
             "file_path": "results\\energy_penalization\\TouchCube.nn",
-            "reward": null,
-            "creation_time": 1607020036.207879
+            "reward": -1.8662490785121917,
+            "creation_time": 1609782495.589227
         }
     },
     "metadata": {
