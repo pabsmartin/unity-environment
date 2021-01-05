@@ -1,0 +1,57 @@
+{
+    "mass": {
+        "lesson_num": 0
+    },
+    "length": {
+        "lesson_num": 0
+    },
+    "scale": {
+        "lesson_num": 0
+    },
+    "TouchCube": {
+        "checkpoints": [
+            {
+                "steps": 136762,
+                "file_path": "results\\energy_penalization\\TouchCube\\TouchCube-136762.nn",
+                "reward": null,
+                "creation_time": 1607012821.6679325
+            },
+            {
+                "steps": 188117,
+                "file_path": "results\\energy_penalization\\TouchCube\\TouchCube-188117.nn",
+                "reward": null,
+                "creation_time": 1607020036.207879
+            },
+            {
+                "steps": 276607,
+                "file_path": "results\\energy_penalization\\TouchCube\\TouchCube-276607.nn",
+                "reward": null,
+                "creation_time": 1609714867.7143164
+            },
+            {
+                "steps": 499948,
+                "file_path": "results\\energy_penalization\\TouchCube\\TouchCube-499948.nn",
+                "reward": null,
+                "creation_time": 1609782493.1876547
+            },
+            {
+                "steps": 501134,
+                "file_path": "results\\energy_penalization\\TouchCube\\TouchCube-501134.nn",
+                "reward": -1.8662490785121917,
+                "creation_time": 1609782495.589227
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 501134,
+            "file_path": "results\\energy_penalization\\TouchCube.nn",
+            "reward": -1.8662490785121917,
+            "creation_time": 1609782495.589227
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.2.0",
+        "mlagents_version": "0.22.0",
+        "torch_version": "1.7.0+cpu",
+        "tensorflow_version": "2.3.1"
+    }
+}
