@@ -11,35 +11,41 @@
     "TouchCube": {
         "checkpoints": [
             {
-                "steps": 63904,
-                "file_path": "results\\finger\\TouchCube\\TouchCube-63904.nn",
-                "reward": null,
-                "creation_time": 1607093047.6501145
-            },
-            {
-                "steps": 84468,
-                "file_path": "results\\finger\\TouchCube\\TouchCube-84468.nn",
-                "reward": null,
-                "creation_time": 1607099408.963146
-            },
-            {
-                "steps": 159660,
-                "file_path": "results\\finger\\TouchCube\\TouchCube-159660.nn",
-                "reward": null,
-                "creation_time": 1607117665.745177
-            },
-            {
                 "steps": 201102,
                 "file_path": "results\\finger\\TouchCube\\TouchCube-201102.nn",
                 "reward": null,
                 "creation_time": 1607167829.4748175
+            },
+            {
+                "steps": 205916,
+                "file_path": "results\\finger\\TouchCube\\TouchCube-205916.nn",
+                "reward": null,
+                "creation_time": 1609841292.4309566
+            },
+            {
+                "steps": 386247,
+                "file_path": "results\\finger\\TouchCube\\TouchCube-386247.nn",
+                "reward": null,
+                "creation_time": 1609877513.5953581
+            },
+            {
+                "steps": 499974,
+                "file_path": "results\\finger\\TouchCube\\TouchCube-499974.nn",
+                "reward": -1.63935786485672,
+                "creation_time": 1609948914.2893045
+            },
+            {
+                "steps": 500974,
+                "file_path": "results\\finger\\TouchCube\\TouchCube-500974.nn",
+                "reward": -2.604663681983948,
+                "creation_time": 1609948916.5463116
             }
         ],
         "final_checkpoint": {
-            "steps": 201102,
+            "steps": 500974,
             "file_path": "results\\finger\\TouchCube.nn",
-            "reward": null,
-            "creation_time": 1607167829.4748175
+            "reward": -2.604663681983948,
+            "creation_time": 1609948916.5463116
         }
     },
     "metadata": {
