@@ -1,0 +1,57 @@
+{
+    "mass": {
+        "lesson_num": 0
+    },
+    "length": {
+        "lesson_num": 0
+    },
+    "scale": {
+        "lesson_num": 0
+    },
+    "TouchCube": {
+        "checkpoints": [
+            {
+                "steps": 120836,
+                "file_path": "results\\gripControl\\TouchCube\\TouchCube-120836.nn",
+                "reward": null,
+                "creation_time": 1608151148.2569332
+            },
+            {
+                "steps": 252304,
+                "file_path": "results\\gripControl\\TouchCube\\TouchCube-252304.nn",
+                "reward": null,
+                "creation_time": 1608216374.113895
+            },
+            {
+                "steps": 387905,
+                "file_path": "results\\gripControl\\TouchCube\\TouchCube-387905.nn",
+                "reward": null,
+                "creation_time": 1608239723.4654255
+            },
+            {
+                "steps": 499947,
+                "file_path": "results\\gripControl\\TouchCube\\TouchCube-499947.nn",
+                "reward": 10.216471135616302,
+                "creation_time": 1608302682.529257
+            },
+            {
+                "steps": 500261,
+                "file_path": "results\\gripControl\\TouchCube\\TouchCube-500261.nn",
+                "reward": 9.88231544494629,
+                "creation_time": 1608302684.1344678
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500261,
+            "file_path": "results\\gripControl\\TouchCube.nn",
+            "reward": 9.88231544494629,
+            "creation_time": 1608302684.1344678
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.2.0",
+        "mlagents_version": "0.22.0",
+        "torch_version": "1.7.0+cpu",
+        "tensorflow_version": "2.3.1"
+    }
+}

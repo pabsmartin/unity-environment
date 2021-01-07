@@ -58,6 +58,7 @@ public class RobotController : MonoBehaviour
             Joint joint = joints[i];
             ArticulationJointController jointController = joint.robotPart.GetComponent<ArticulationJointController>();
             jointController.ForceToRotation(0.0f);
+            //jointController.ForceToRotation(rotations[i]);
         }
     }
 
@@ -66,7 +67,7 @@ public class RobotController : MonoBehaviour
     static void UpdateRotationState(RotationDirection direction, GameObject robotPart)
     {
         ArticulationJointController jointController = robotPart.GetComponent<ArticulationJointController>();
-        jointController.rotationState = direction;
+        jointController.rotationState = direction; 
     }
 
 
